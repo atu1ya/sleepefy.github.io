@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleepefy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Sleepefy</h1>
+        <p>Enter the time you go to bed or the time you want to wake up, and we'll advise you for optimal sleep cycles.</p>
+        
+        <div id="caffeine-section">
+            <p>Do you want to account for caffeine intake?</p>
+            <button id="caffeine-yes">Yes</button>
+            <button id="caffeine-no">No</button>
+        </div>
+
+        <div id="caffeine-details" style="display: none;">
+            <p>Do you want to calculate your optimal sleep/wake up time in depth or quickly?</p>
+            <button id="caffeine-quick">Quickly</button>
+            <button id="caffeine-detailed">In Depth</button>
+        </div>
+
+        <form id="caffeine-quick-form" style="display: none;">
+            <label for="quick-caffeine-intake">Average Caffeine Intake (mg/day):</label>
+            <input type="number" id="quick-caffeine-intake">
+            <label for="quick-hours-since-caffeine">Hours Since Last Caffeine Intake:</label>
+            <input type="number" id="quick-hours-since-caffeine">
+            <label for="quick-caffeine-today">Caffeine Consumed Today (mg):</label>
+            <input type="range" id="quick-caffeine-today" min="0" max="1000" step="10">
+            <p id="caffeine-today-display">0 mg (0 cups of coffee / 0 cans of Red Bull)</p>
+            <button type="submit">Submit</button>
+        </form>
+
+        <form id="caffeine-detailed-form" style="display: none;">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight">
+            <label for="detailed-caffeine-intake">Average Caffeine Intake (mg/day):</label>
+            <input type="number" id="detailed-caffeine-intake">
+            <label for="detailed-hours-since-caffeine">Hours Since Last Caffeine Intake:</label>
+            <input type="number" id="detailed-hours-since-caffeine">
+            <label for="detailed-caffeine-today">Caffeine Consumed Today (mg):</label>
+            <input type="range" id="detailed-caffeine-today" min="0" max="1000" step="10">
+            <p id="detailed-caffeine-today-display">0 mg (0 cups of coffee / 0 cans of Red Bull)</p>
+            <button type="submit">Submit</button>
+        </form>
+
+        <form id="bedtime-form" style="display: none;">
+            <label for="bedtime">Bedtime:</label>
+            <input type="time" id="bedtime">
+            <button type="submit">Calculate Alarm Times</button>
+        </form>
+
+        <form id="wakeuptime-form" style="display: none;">
+            <label for="wakeuptime">Wake-up Time:</label>
+            <input type="time" id="wakeuptime">
+            <button type="submit">Calculate Bedtimes</button>
+        </form>
+
+        <div id="results"></div>
+        <div id="info">
+            <p>Calculations are based on the average sleep cycle time of 100 minutes, and it takes 17 minutes for a person to fall asleep on average.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
